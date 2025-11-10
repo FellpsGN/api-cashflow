@@ -16,6 +16,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlow.Exception", "src\C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlow.Infrastructure", "src\CashFlow.Infrastructure\CashFlow.Infrastructure.csproj", "{474049A9-30F3-4F35-8EE9-45F699363FFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validators.Tests", "tests\Validators.Tests\Validators.Tests.csproj", "{703670C0-9BDB-4090-B91F-B648C2FF009D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonTestUtilities", "tests\CommonTestUtilities\CommonTestUtilities.csproj", "{4875F387-745F-4D74-9490-1F2EC56BE245}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +32,8 @@ Global
 		{E372690F-6DD6-4C11-86DA-EBE06DD4B77E} = {80C95E41-F92D-48C6-B1AB-1012B8367689}
 		{CEE95340-012D-4375-992E-B936328DD491} = {80C95E41-F92D-48C6-B1AB-1012B8367689}
 		{474049A9-30F3-4F35-8EE9-45F699363FFD} = {80C95E41-F92D-48C6-B1AB-1012B8367689}
+		{703670C0-9BDB-4090-B91F-B648C2FF009D} = {97F1588B-5198-4375-8A72-7014BE9F15B1}
+		{4875F387-745F-4D74-9490-1F2EC56BE245} = {97F1588B-5198-4375-8A72-7014BE9F15B1}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{B195E060-8D54-4FDF-BA22-14D7F10F88ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -54,5 +60,13 @@ Global
 		{474049A9-30F3-4F35-8EE9-45F699363FFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{474049A9-30F3-4F35-8EE9-45F699363FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{474049A9-30F3-4F35-8EE9-45F699363FFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{703670C0-9BDB-4090-B91F-B648C2FF009D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{703670C0-9BDB-4090-B91F-B648C2FF009D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{703670C0-9BDB-4090-B91F-B648C2FF009D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{703670C0-9BDB-4090-B91F-B648C2FF009D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4875F387-745F-4D74-9490-1F2EC56BE245}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4875F387-745F-4D74-9490-1F2EC56BE245}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4875F387-745F-4D74-9490-1F2EC56BE245}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4875F387-745F-4D74-9490-1F2EC56BE245}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
