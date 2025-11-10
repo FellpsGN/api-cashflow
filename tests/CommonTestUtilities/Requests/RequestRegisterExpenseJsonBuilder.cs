@@ -8,16 +8,11 @@ public class RequestRegisterExpenseJsonBuilder
 {
     public static RequestRegisterExpenseJson Build()
     {
-        var faker = new Faker();
-        var request = new RequestRegisterExpenseJson
-        {
-            Title = faker.Commerce.ProductName(),
-            Description = faker.Commerce.ProductDescription(),
-            Date = faker.Date.Past(),
-            PaymentType = faker.PickRandom<PaymentType>(),
-            Amount = faker.Random.Decimal(min: 10, max: 100)
-        };
-
-        return request;
+        return new Faker<RequestRegisterExpenseJson>()
+            .RuleFor(req => req.Title, faker => faker.Commerce.ProductName())
+            .RuleFor(req => req.Description, faker => faker.Commerce.ProductDescription())
+            .RuleFor(req => req.Date, faker => faker.Date.Past())
+            .RuleFor(req => req.PaymentType, faker => faker.PickRandom<PaymentType>())
+            .RuleFor(req => req.Amount, faker => faker.Random.Decimal(min: 10, max: 100));
     }
 }
