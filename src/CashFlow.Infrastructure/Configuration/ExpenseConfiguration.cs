@@ -12,7 +12,7 @@ internal class ExpenseConfiguration : IEntityTypeConfiguration<Expense>
         builder.HasKey(col => col.Id);
         builder.Property(col => col.Title).IsRequired().HasMaxLength(200);
         builder.Property(col => col.Description).HasMaxLength(200);
-        builder.Property(col => col.Date).IsRequired().HasColumnType("timestamp");
+        builder.Property(col => col.Date).IsRequired().HasColumnType("timestampz");
         builder.Property(col => col.Amount).IsRequired().HasColumnType("numeric(10,2)");
         builder.Property(col => col.PaymentType)
             .IsRequired()
