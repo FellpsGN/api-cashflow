@@ -27,7 +27,7 @@ public class RegisterExpenseUseCase : IRegisterExpenseUseCase
             throw new ErrorOnValidationException { ErrorMessages = expenseErrorsMessage };
         }
     }
-    public ResponseRegisterExpenseJson Execute(RequestRegisterExpenseJson request)
+    public async Task<ResponseRegisterExpenseJson> Execute(RequestRegisterExpenseJson request)
     {
         Validate(request);
 
@@ -40,8 +40,8 @@ public class RegisterExpenseUseCase : IRegisterExpenseUseCase
             PaymentType = (Domain.Enums.PaymentType)request.PaymentType
         };
         
-        _expenseRepository.Add(entity);
-        _unityOfWork.Commit();
+        await _expenseRepository.Add(entity);
+        await _unityOfWork.Commit();
         
         return new ResponseRegisterExpenseJson
         {
