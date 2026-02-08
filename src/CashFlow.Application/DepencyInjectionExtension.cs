@@ -9,7 +9,7 @@ public static class DepencyInjectionExtension
 {
     public static void AddApplication(this IServiceCollection services)
     {
-        AddUseCases(services);
+        AddAutoMapper(services);
         AddUseCases(services);
     }
 
