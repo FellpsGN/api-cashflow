@@ -28,7 +28,7 @@ public class RegisterExpenseUseCase : IRegisterExpenseUseCase
         if (!expenseValidationResult.IsValid)
         {
             var expenseErrorsMessage = expenseValidationResult.Errors.Select(error => error.ErrorMessage).ToList();
-            throw new ErrorOnValidationException { ErrorMessages = expenseErrorsMessage };
+            throw new ErrorOnValidationException(expenseErrorsMessage);
         }
     }
     public async Task<ResponseRegisterExpenseJson> Execute(RequestRegisterExpenseJson request)
