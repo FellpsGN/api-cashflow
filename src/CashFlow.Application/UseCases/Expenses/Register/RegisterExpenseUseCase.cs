@@ -1,11 +1,10 @@
 using AutoMapper;
-
 using CashFlow.Communication.Requests;
 using CashFlow.Communication.Responses;
-using CashFlow.Exception.ExceptionsBase;
-using CashFlow.Domain.Repositories.Expenses;
 using CashFlow.Domain.Entities;
 using CashFlow.Domain.Repositories;
+using CashFlow.Domain.Repositories.Expenses;
+using CashFlow.Exception.ExceptionsBase;
 
 namespace CashFlow.Application.UseCases.Expenses.Register;
 
@@ -20,9 +19,9 @@ public class RegisterExpenseUseCase : IRegisterExpenseUseCase
         _unityOfWork = unityOfWork;
         _mapper = mapper;
     }
-    private void Validate(RequestRegisterExpenseJson request)
+    private void Validate(RequestExpenseJson request)
     {
-        var expenseValidator = new RegisterExpenseValidator();
+        var expenseValidator = new ExpenseValidator();
         var expenseValidationResult = expenseValidator.Validate(request);
 
         if (!expenseValidationResult.IsValid)
@@ -31,7 +30,7 @@ public class RegisterExpenseUseCase : IRegisterExpenseUseCase
             throw new ErrorOnValidationException(expenseErrorsMessage);
         }
     }
-    public async Task<ResponseRegisterExpenseJson> Execute(RequestRegisterExpenseJson request)
+    public async Task<ResponseRegisterExpenseJson> Execute(RequestExpenseJson request)
     {
         Validate(request);
 
