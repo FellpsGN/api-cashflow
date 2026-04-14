@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using CashFlow.Domain.Entities;
 using CashFlow.Domain.Repositories.Expenses;
 using Microsoft.EntityFrameworkCore;
@@ -48,5 +49,19 @@ internal class ExpensesRepository : IExpensesReadOnlyRepository, IExpensesWriteO
     public void UpdateExpense(Expense expense)
     {
         _dbContext.Expenses.Update(expense);
+    }
+
+    public async Task<List<Expense>> FilterByMonth(DateOnly date)
+    {
+        var startDate = DateTime.SpecifyKind(new DateTime(year: date.Year, month: date.Month, day: 1).Date, DateTimeKind.Utc);
+        var endDate = startDate.AddMonths(1);
+        var monthlyExpenses = await _dbContext.Expenses
+            .AsNoTracking()
+            .Where(expense => expense.Date >= startDate && expense.Date < endDate)
+            .OrderBy(expense => expense.Date)
+            .ThenBy(expense => expense.Amount)
+            .ToListAsync();
+
+        return monthlyExpenses;
     }
 }
