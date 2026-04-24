@@ -1,3 +1,4 @@
+using System.Reflection;
 using PdfSharp.Fonts;
 using MigraDoc.DocumentObjectModel;
 
@@ -7,16 +8,26 @@ public class ExpensesReportFontResolver : IFontResolver
 {
     public FontResolverInfo? ResolveTypeface(string familyName, bool bold, bool italic)
     {
-        new Font
-        {
-            Name = FontHelper.RALEWAY_REGULAR
-        };
-        
         return new FontResolverInfo(familyName);
     }
-
-    public byte[]? GetFont(string faceName)
+    
+    public byte[]? GetFont(string fileName)
     {
-        throw new NotImplementedException();
+        var stream = ReadFontFile(fileName);
+        if (stream is null) stream = ReadFontFile(FontHelper.DEFAULT_FONT);
+        
+        var length = (int)stream!.Length;
+        var data = new byte[length];
+
+        stream.Read(buffer: data, offset: 0, count: length);
+
+        return data;
+    }
+    
+    private Stream? ReadFontFile(string fileName)
+    {
+        var assembly = Assembly.GetExecutingAssembly();
+        
+        return assembly.GetManifestResourceStream($"CashFlow.Application.UseCases.Expenses.Reports.Pdf.Fonts.{fileName}.ttf"); 
     }
 }
