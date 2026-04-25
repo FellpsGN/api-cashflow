@@ -14,7 +14,7 @@ namespace CashFlow.Domain.Reports {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ResourceReportGenerationMessages_pt_BR {
+    public class ResourceReportGenerationMessages_pt_BR {
         
         private static System.Resources.ResourceManager resourceMan;
         
@@ -25,7 +25,7 @@ namespace CashFlow.Domain.Reports {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static System.Resources.ResourceManager ResourceManager {
+        public static System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.Equals(null, resourceMan)) {
                     System.Resources.ResourceManager temp = new System.Resources.ResourceManager("CashFlow.Domain.Reports.ResourceReportGenerationMessages_pt_BR", typeof(ResourceReportGenerationMessages_pt_BR).Assembly);
@@ -36,7 +36,7 @@ namespace CashFlow.Domain.Reports {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static System.Globalization.CultureInfo Culture {
+        public static System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -45,31 +45,31 @@ namespace CashFlow.Domain.Reports {
             }
         }
         
-        internal static string AMOUNT {
+        public static string AMOUNT {
             get {
                 return ResourceManager.GetString("AMOUNT", resourceCulture);
             }
         }
         
-        internal static string DATE {
+        public static string DATE {
             get {
                 return ResourceManager.GetString("DATE", resourceCulture);
             }
         }
         
-        internal static string DESCRIPTION {
+        public static string DESCRIPTION {
             get {
                 return ResourceManager.GetString("DESCRIPTION", resourceCulture);
             }
         }
         
-        internal static string PAYMENT_TYPE {
+        public static string PAYMENT_TYPE {
             get {
                 return ResourceManager.GetString("PAYMENT_TYPE", resourceCulture);
             }
         }
         
-        internal static string TITLE {
+        public static string TITLE {
             get {
                 return ResourceManager.GetString("TITLE", resourceCulture);
             }

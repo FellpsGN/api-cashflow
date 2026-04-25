@@ -74,5 +74,11 @@ namespace CashFlow.Domain.Reports {
                 return ResourceManager.GetString("TITLE", resourceCulture);
             }
         }
+        
+        public static string EXPENSES_FOR {
+            get {
+                return ResourceManager.GetString("EXPENSES_FOR", resourceCulture);
+            }
+        }
     }
 }

@@ -33,4 +33,7 @@
     <data name="TITLE" xml:space="preserve">
         <value>Titre</value>
     </data>
+    <data name="EXPENSES_FOR" xml:space="preserve">
+        <value>Dépenses pour</value>
+    </data>
 </root>
